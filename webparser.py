@@ -19,7 +19,7 @@ def get_urls(url: str, __s: int, __e: int) -> list[str]:
     return urls
 
 def get_response(url: str, headers: dict = headers):
-    '''Gets response object from page №?'''
+    '''Gets response object from page №X'''
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
@@ -143,3 +143,10 @@ def wipe_folders(path: str):
         # If a item is nor folder not .schematic, remove it
         elif not item_path.endswith('.schematic'):
             os.remove(item_path)
+
+
+if __name__ == '__main__':
+    root_dir = r"C:\Users\kanal\OneDrive\Рабочий стол\FreeCodeCamp\Viridion_s Medieval Building Pack\script test"
+    wipe_folders(root_dir)
+    # print(find_schematic_files(root_dir))
+    ...

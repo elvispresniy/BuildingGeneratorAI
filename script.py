@@ -1,7 +1,7 @@
 import webparser
 
 original_url = r"https://www.planetminecraft.com/projects/tag/bundle/?order=order_popularity&share=schematic&p="
-save_path = r"Enter path where .schematic will be stored"
+save_path = r'C:\Users\rualz\Desktop\Dekstop\Code\ai_roadmap\voxel_mesh\neg'
 
 start = int(input('Input start page: '))
 end = int(input('Input end page: '))
@@ -20,6 +20,9 @@ for url in urls:
 
     # Iterate through links
     for link in links:
+        flag = bool(input(f'{link}\nContinue?'))
+        if not flag:
+            continue
 
         # Get response from a map
         map_response = webparser.get_map_response(link)
